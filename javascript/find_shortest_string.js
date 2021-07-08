@@ -1,21 +1,32 @@
 function findShortestString(arr) {
-  // type your code here
+  let shortString = arr[0];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].length < shortString.length) {
+      shortString = arr[i];
+    }
+  }
+
+  return shortString;
 }
 
 if (require.main === module) {
   // add your own tests in here
   console.log("Expecting: 'a'");
-  console.log("=>", findShortestString(['aaa', 'a', 'bb', 'ccc']));
+  console.log("=>", findShortestString(["aaa", "a", "bb", "ccc"]));
 
   console.log("");
 
   console.log("Expecting: 'hi'");
-  console.log("=>", findShortestString(['cat', 'hi', 'dog', 'an']));
+  console.log("=>", findShortestString(["cat", "hi", "dog", "an"]));
 
   console.log("");
 
   console.log("Expecting: 'lily'");
-  console.log("=>", findShortestString(['flower', 'juniper', 'lily', 'dadelion']));
+  console.log(
+    "=>",
+    findShortestString(["flower", "juniper", "lily", "dadelion"])
+  );
 
   // BENCHMARK HERE
 }
